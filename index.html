@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korea Bike Trip - Day 1</title>
+
+    <!-- Import the scrolly-video library -->
+    <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+    
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Opening page with bike image -->
+    <div class="opening-page">
+        <div class="bike-image-container">
+            <img src="pages/krzineCover1.jpg" alt="Biking Korea" class="bike-image">
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </div>
+
+    <!-- Main container for the scrolly experience -->
+    <div class="scrolly-container">
+
+        <!-- Video container -->
+        <div id="scrolly-video"></div>
+
+        <!-- Empty div to create scroll space -->
+        <div class="scroll-space"></div>
+
+    </div>
+
+    <script>
+        // Initialize the ScrollyVideo library with your video
+        new ScrollyVideo({
+            scrollyVideoContainer: "scrolly-video",
+            src: "video/day1_1.mp4",
+            transitionSpeed: 2,
+            frameThreshold: 0.1,
+            useWebCodecs: false,
+            trackScroll: true,
+            lockScroll: false,
+            debug: true,
+            objectFit: "contain" // Use contain instead of cover to prevent zooming
+        });
+    </script>
+
+</body>
+</html>

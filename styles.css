@@ -1,0 +1,130 @@
+/* Zine-inspired styling for the scrolly video page */
+
+/* Basic page reset */
+body {
+    margin: 0;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #1e292b; /* Updated to match new SVG background */
+    background-image: url("noise.svg");
+    background-size: 700px 700px; /* Updated to match new SVG size */
+    background-repeat: repeat;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Opening page */
+.opening-page {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bike-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bike-image {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border: 3px solid #333;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+}
+
+.scroll-arrow {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* The Scrolly Container */
+.scrolly-container {
+    position: relative;
+}
+
+/* The Video Div */
+#scrolly-video {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    object-fit: cover;
+    border: 3px solid #333; /* Zine-style border */
+}
+
+/* Chrome-specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    #scrolly-video video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+    
+    #scrolly-video canvas {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+}
+
+/* Scroll space to enable scrolling */
+.scroll-space {
+    height: 300vh; /* 3x viewport height for smooth scrolling */
+    width: 100%;
+}
+
+/* Custom scrollbar for zine feel */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e292b; /* Match the new background color */
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 6px;
+    border: 2px solid #1e292b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
