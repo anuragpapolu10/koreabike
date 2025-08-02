@@ -52,38 +52,34 @@
         </div>
     </div>
 
-    <!-- Placeholder for second video section -->
-    <div class="video-section">
-        <div class="text-section">
-            <div class="text-content">
-                <h2>Day 2: Yeoju to Chungju</h2>
-                <p>Write about your second day here. Describe the morning routine, the new challenges you faced, and how the journey is progressing.</p>
-                <p>Include details about the landscape changes, any interesting towns you passed through, or encounters with locals.</p>
-            </div>
+    <!-- Text section before second video -->
+    <div class="text-section">
+        <div class="text-content">
+            <h2>Day 2: Yeoju to Chungju</h2>
+            <p>Write about your second day here. Describe the morning routine, the new challenges you faced, and how the journey is progressing.</p>
+            <p>Include details about the landscape changes, any interesting towns you passed through, or encounters with locals.</p>
         </div>
+    </div>
+
+    <!-- Second video section -->
+    <div class="scrolly-container">
+        <!-- Video container -->
+        <div id="scrolly-video-2"></div>
         
-        <!-- Panorama image with horizontal scroll -->
-        <div class="panorama-container">
-            <div class="panorama-scroll">
-                <img src="pages/day2pano.jpg" alt="Day 2 Panorama" class="panorama-image">
-            </div>
-        </div>
-        
-        <!-- Placeholder for second video -->
-        <div class="video-placeholder">
-            <p>Second video will go here</p>
-        </div>
-        
-        <div class="text-section">
-            <div class="text-content">
-                <h2>Day 2 Reflections</h2>
-                <p>Reflect on the second day of your journey. How are you adapting to the routine? Any new insights about yourself or the trip?</p>
-            </div>
+        <!-- Empty div to create scroll space -->
+        <div class="scroll-space"></div>
+    </div>
+
+    <!-- Text section after second video -->
+    <div class="text-section">
+        <div class="text-content">
+            <h2>Day 2 Reflections</h2>
+            <p>Reflect on the second day of your journey. How are you adapting to the routine? Any new insights about yourself or the trip?</p>
         </div>
     </div>
 
     <script>
-        // Initialize the ScrollyVideo library with your video
+        // Initialize the first ScrollyVideo
         new ScrollyVideo({
             scrollyVideoContainer: "scrolly-video",
             src: "video/day1_1.mp4",
@@ -93,7 +89,20 @@
             trackScroll: true,
             lockScroll: false,
             debug: true,
-            objectFit: "contain" // Use contain instead of cover to prevent zooming
+            objectFit: "contain"
+        });
+
+        // Initialize the second ScrollyVideo
+        new ScrollyVideo({
+            scrollyVideoContainer: "scrolly-video-2",
+            src: "video/day2_1.mp4",
+            transitionSpeed: 2,
+            frameThreshold: 0.1,
+            useWebCodecs: false,
+            trackScroll: true,
+            lockScroll: false,
+            debug: true,
+            objectFit: "contain"
         });
     </script>
 

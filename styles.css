@@ -109,30 +109,6 @@ body {
     margin: 2rem 0;
 }
 
-/* Panorama image with horizontal scroll */
-.panorama-container {
-    margin: 2rem 0;
-    height: 50vh; /* Half the height of video */
-    overflow-x: auto;
-    overflow-y: hidden;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    border: 2px solid #333;
-}
-
-.panorama-scroll {
-    display: flex;
-    height: 100%;
-    min-width: max-content;
-}
-
-.panorama-image {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
 .video-placeholder {
     height: 400px;
     background-color: rgba(255, 255, 255, 0.1);
@@ -166,6 +142,16 @@ body {
     border: 3px solid #333; /* Zine-style border */
 }
 
+#scrolly-video-2 {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    object-fit: cover;
+    border: 3px solid #333; /* Zine-style border */
+}
+
 /* Chrome-specific fixes */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     #scrolly-video video {
@@ -176,6 +162,20 @@ body {
     }
     
     #scrolly-video canvas {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+
+    #scrolly-video-2 video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+    
+    #scrolly-video-2 canvas {
         width: 100% !important;
         height: 100% !important;
         object-fit: contain !important;
