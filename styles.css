@@ -210,7 +210,7 @@ body {
 } 
 
 /* Layered image section */
-#layered-section {
+#layered-section, #layered-section-2 {
     position: sticky;
     top: 0;
     width: 100%;
