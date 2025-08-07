@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korea Bike Trip - Day 1</title>
+    <title>Korea Bike Trip - Interactive Zine</title>
 
     <!-- Import the scrolly-video library -->
     <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
@@ -12,8 +12,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-section="prep">PREP</button>
+                <button class="nav-tab" data-section="journey">JOURNEY</button>
+                <button class="nav-tab" data-section="photos">PHOTOS</button>
+                <button class="nav-tab" data-section="videos">VIDEOS</button>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Opening page with bike image -->
+    <!-- PREP SECTION -->
+    <section id="prep-section" class="main-section active">
+        <!-- Opening page with bike image -->
     <div class="opening-page">
         <div class="bike-image-container">
             <img src="pages/krzineCover1.jpg" alt="Biking Korea" class="bike-image">
@@ -29,7 +42,7 @@
         <div id="layered-section">
             <div class="layered-container">
                 <!-- Base layer (always visible) -->
-                <img src="pages/p1/p1_1.png" alt="Page 1 Layer 1" class="layer-image base-layer">
+                <img src="pages/p1/p1_1.jpg" alt="Page 1 Layer 1" class="layer-image base-layer">
                 
                 <!-- Additional layers that appear on scroll -->
                 <img src="pages/p1/p1_2.png" alt="Page 1 Layer 2" class="layer-image scroll-layer" data-layer="2">
@@ -49,7 +62,7 @@
         <div id="layered-section-2">
             <div class="layered-container">
                 <!-- Base layer (always visible) -->
-                <img src="pages/p2/p2_1.png" alt="Page 2 Layer 1" class="layer-image base-layer">
+                <img src="pages/p2/p2_1.jpg" alt="Page 2 Layer 1" class="layer-image base-layer">
                 
                 <!-- Additional layers that appear on scroll -->
                 <img src="pages/p2/p2_2.png" alt="Page 2 Layer 2" class="layer-image scroll-layer" data-layer="2">
@@ -62,88 +75,429 @@
         <!-- Empty div to create scroll space for layered effect -->
         <div class="scroll-space"></div>
     </div>
-
-    <!-- Text section after layered section -->
-    <div class="text-section">
-        <div class="text-content">
-            <h2>Day 1: Guri to Yeoju</h2>
-            <p>This is where you can write about the beginning of your journey. Describe the excitement of starting the trip, the weather, your feelings, or any interesting encounters from the first day.</p>
-            <p>You can add multiple paragraphs here to tell the full story of your first day on the road. Include details about the route, the scenery, the challenges, and the highlights.</p>
-        </div>
-    </div>
-
-    <!-- Main container for the scrolly experience -->
-    <div class="scrolly-container">
-
-        <!-- Video container -->
-        <div id="scrolly-video"></div>
-
-        <!-- Empty div to create scroll space -->
-        <div class="scroll-space"></div>
-
-    </div>
-
-    <!-- Text section after first video -->
-    <div class="text-section">
-        <div class="text-content">
-            <h2>Reflections on Day 1</h2>
-            <p>Here you can write about your thoughts after completing the first day. What surprised you? What was easier or harder than expected? Any memorable moments or lessons learned?</p>
-            <p>This is also a good place to mention any gear that worked well or didn't work as expected, or any adjustments you made to your setup.</p>
-        </div>
-    </div>
-
-    <!-- Text section before second video -->
-    <div class="text-section">
-        <div class="text-content">
-            <h2>Day 2: Yeoju to Chungju</h2>
-            <p>Write about your second day here. Describe the morning routine, the new challenges you faced, and how the journey is progressing.</p>
-            <p>Include details about the landscape changes, any interesting towns you passed through, or encounters with locals.</p>
-        </div>
-    </div>
-
-    <!-- Second video section -->
-    <div class="scrolly-container">
-        <!-- Video container -->
-        <div id="scrolly-video-2"></div>
+    
+    <!-- P3 Page - Interactive Bike Setup -->
+    <div class="interactive-page-section" id="p3-section">
+        <!-- SVG container for curved lines -->
+        <svg class="curve-container" id="curve-svg">
+        </svg>
         
-        <!-- Empty div to create scroll space -->
-        <div class="scroll-space"></div>
-    </div>
-
-    <!-- Text section after second video -->
-    <div class="text-section">
-        <div class="text-content">
-            <h2>Day 2 Reflections</h2>
-            <p>Reflect on the second day of your journey. How are you adapting to the routine? Any new insights about yourself or the trip?</p>
+        <div class="interactive-container">
+            <!-- Base bike image with hotspots -->
+            <div class="image-wrapper">
+                <img src="pages/p3/pck1.jpg" alt="Bike Setup" class="interactive-bike-image">
+                
+                <!-- Interactive hotspots -->
+            <div class="hotspot" data-label="jack" style="top: 67%; left: 26%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Jack The Rack:<br>(It's a tiny front rack<br>that mounts onto<br>the handlebars.<br>I was amazed how<br>well it held up!)</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="ile-porteur" style="top: 71%; left: 8%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Front rack bag:<br>ILE Porteur Bag- Medium</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="pizza-rat" style="top: 64%; left: 8%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">PIZZA RAT</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="cargo-net" style="top: 59%; left: 13%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Cargo net:<br>invaluable!</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="phone-mount" style="top: 59%; left: 22%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Phone Mount:<br>Peak Design Out Front mount</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="navigation" style="top: 59%; left: 31%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Navigation:<br>Wahoo Hammerhead Karoo 2</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="speaker" style="top: 64%; left: 40%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Speaker:<br>Tribit Stormbox 2</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="revelate" style="top: 69%; left: 45%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Revelate Designs<br>Tangle Half Frame bag:<br>Worked great!, but gets in<br>the way of the bottles, NBD</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="lights" style="top: 66%; left: 64%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Regular lights:<br>For front lights,<br>get one that you<br>can slide on and off.<br>Straps break, like<br>mine did.</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="ral" style="top: 75%; left: 72%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Panniers: RAL Ex-Loader<br>Good size! But actually fell<br>off while riding, and had to<br>go back and pick it up.</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            
+            <div class="hotspot" data-label="simworks" style="top: 66%; left: 77%;">
+                <div class="hotspot-dot"></div>
+                <div class="hotspot-label">
+                    <div class="label-text">Simworks by Nitto:<br>On The Road Rack</div>
+                    <div class="label-line"></div>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
+    
+    <!-- P4 Page - Static tall image -->
+    <div class="static-page-section" id="p4-section">
+        <div class="static-container">
+            <img src="pages/p4/p4tall.jpg" alt="Page 4" class="static-tall-image">
+        </div>
+    </div>
+    
+    <!-- P5 Page - Static image -->
+    <div class="regular-page-section" id="p5-section">
+        <div class="regular-container">
+            <img src="pages/p5/p5.jpg" alt="Page 5" class="static-image">
+        </div>
+    </div>
+    
+    <!-- P6 Page - Static image -->
+    <div class="regular-page-section" id="p6-section">
+        <div class="regular-container">
+            <img src="pages/p6/p6.jpg" alt="Page 6" class="static-image">
+        </div>
+    </div>
+    
+    <!-- P7 Page - Base and cover images -->
+    <div class="regular-page-section" id="p7-section">
+        <div class="regular-container">
+            <div class="xray-container">
+                <!-- Base layer - packed bike image -->
+                <img src="pages/p7/p7_1.jpg" alt="Packed Bike Base" class="xray-base-image">
+                <!-- Cover layer - cardboard box overlay -->
+                <img src="pages/p7/p7_2.png" alt="Cardboard Box Cover" class="xray-cover-image">
+                
+                <!-- P7 Interactive markers (like P3 hotspots) -->
+                <div class="p7-marker" data-item="rear-rack" style="top: 54%; left: 35%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="handlebar" style="top: 53%; left: 72%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="seat-post" style="top: 56%; left: 58%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="pedals" style="top: 78%; left: 46%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="derailleur" style="top: 69%; left: 25%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="bottle-cages" style="top: 78%; left: 74%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="thru-axle" style="top: 64%; left: 80%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <div class="p7-marker" data-item="cardboard-box" style="top: 54%; left: 15%;">
+                    <div class="p7-marker-dot"></div>
+                </div>
+                
+                <!-- P7 Labels that appear on proximity -->
+                <div class="p7-label" data-item="rear-rack" style="top: 42%; left: 23%;">
+                    <div class="p7-label-text">Rear rack<br>stayed on</div>
+                </div>
+                
+                <div class="p7-label" data-item="handlebar" style="top: 42%; left: 70%;">
+                    <div class="p7-label-text">Handlebar<br>OFF</div>
+                </div>
+                
+                <div class="p7-label" data-item="seat-post" style="top: 42%; left: 45%;">
+                    <div class="p7-label-text">Seat post<br>OFF</div>
+                </div>
+                
+                <div class="p7-label" data-item="pedals" style="top: 85%; left: 15%;">
+                    <div class="p7-label-text">Pedals off<br> and bubble wrapped</div>
+                </div>
+                
+                <div class="p7-label" data-item="derailleur" style="top: 85%; left: 3%;">
+                    <div class="p7-label-text">Derailleur unscrewed<br>and bubble wrapped<br>(be careful while<br>unscrewing)</div>
+                </div>
+                
+                <div class="p7-label" data-item="bottle-cages" style="top: 85%; left: 15%;">
+                    <div class="p7-label-text">Bottle cages<br>Bubble wrapped</div>
+                </div>
+                
+                <div class="p7-label" data-item="thru-axle" style="top: 85%; left: 60%;">
+                    <div class="p7-label-text">Thru-axle<br>stays on to<br>protect<br>the fork</div>
+                </div>
+                
+                <div class="p7-label" data-item="cardboard-box" style="top: 42%; left: 10%;">
+                    <div class="p7-label-text">Cardboard box<br>from local<br>bike shop</div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Additional zine pages will go here -->
+        <!-- Add krzine+page1_2_2, krzine+page3_4, etc. -->
+        
+    </section>
+    
+    <!-- JOURNEY SECTION -->
+    <section id="journey-section" class="main-section">
+        <!-- Day 1: Incheon to Guri via Seoul - Text -->
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Day 1: Incheon to Guri via Seoul</h2>
+                <p>We first tried to take a ferry to the mainland, but the route said to go on a highway where bikes are not allow. So we tried to take the train from the airport. On the way I bumped my front disc rotor into a bollard, and it making groaning noises. When we got to the airport train station, we were told we couldn't take bikes on them (despite my research sayin we could.) Not the best start, and already late by a couple of hours. We found a "jumbo Taxi"- shoved our bikes and bags in, and we on our way!</p>
+            </div>
+        </div>
+
+        <!-- Day 1 Video -->
+        <div class="scrolly-container">
+            <div id="scrolly-video"></div>
+            <div class="scroll-space"></div>
+        </div>
+
+        <!-- Day 1 Reflections -->
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Day 1 Reflections</h2>
+                <p>The late start, my groaning brake (which took Fat Man Laser Beam an hour to fix, mean that we got to our Guri hotel at around 11pm. We took a small detour on the way for dinner at a Chinese Malatang restaurant. It felt like a huge detour, but on the map looks like a tiny blip on the route, a sign of our exhaustion.</p>
+                <p>We were tired, not from riding but just from being up all day in a new place doing a new thing. But the Han River Bike path was pretty spectacular. We stopped at many spots. See the media sections for more!).</p>
+            </div>
+        </div>
+
+        <!-- Day 2: Guri to Yeoju - Text -->
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Day 2: Guri to Yeoju</h2>
+                <p>We didn't learn our lesson and left slowly around 9 or 10AM. We rode on the sidewalks to a Tous Les Jours close by and had breakfast (we eventually stopped doing sit down breakfasts). I stocked up on pastries and we headed out. Guri is on the very outskirts of the Seoul Urban core, so we pretty quickly hit the ex-urbs.</p>
+                <p>I was kind of amazed by the trail. The first 60 kilometres or so outside Seoul were like bike paradise. Great trail surface, cool air by the river, mechanic stalls, and cafes all along the way. There were fancy bike apparel shops like 60KM out from Seoul, pretty cool. Made me think about how the trails outside NYC barely have anything for cyclists at all.</p>
+            </div>
+        </div>
+
+        <!-- Day 2 Video -->
+        <div class="scrolly-container">
+            <div id="scrolly-video-2"></div>
+            <div class="scroll-space"></div>
+        </div>
+
+        <!-- Day 2 Reflections -->
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Day 2 Reflections</h2>
+                <p>The last hour after dusk was somewhat rough. Lot of bugs flying into me. Never felt unsafe though, just felt like we didn't make it on time. Other cyclists on the path were riding to a campsite in the opposite direction. When we got into town people were out and about, but it was still 9-10pm by the time we reached our Yeoju hotel. The guy at the reception was very friendly and said we could keep our bikes in our rooms, perfect!</p>
+                <p>It was Chuseok (추석) harvest festival time the next day, so we were lucky to find a small restaurant open. The granny there made us some really great food. We decided to spend the next day at Yeoju cause it was a national holiday and also because it's a town famous for it's ceramics and we wanted to check it out.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PHOTOS SECTION -->
+    <section id="photos-section" class="main-section">
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Photo Gallery</h2>
+                <p>Photos from the journey will go here.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- VIDEOS SECTION -->
+    <section id="videos-section" class="main-section">
+        <div class="text-section">
+            <div class="text-content">
+                <h2>Video Collection</h2>
+                <p>Additional video content will go here.</p>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Initialize the first ScrollyVideo
-        new ScrollyVideo({
-            scrollyVideoContainer: "scrolly-video",
-            src: "video/day1_1.mp4",
-            transitionSpeed: 1, // Reduced from 2 for smoother transitions
-            frameThreshold: 0.1,
-            useWebCodecs: true, // Enable WebCodecs for better performance
-            trackScroll: true,
-            lockScroll: false,
-            debug: true,
-            objectFit: "contain"
+        // Navigation functionality
+        function showSection(sectionName) {
+            // Hide all sections
+            document.querySelectorAll('.main-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionName + '-section');
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+            
+            // Add active class to selected tab
+            const selectedTab = document.querySelector(`[data-section="${sectionName}"]`);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Re-initialize scrolly videos if we're in the journey section
+            if (sectionName === 'journey') {
+                setTimeout(initializeScrollyVideos, 100);
+            }
+        }
+        
+        // Add click listeners to nav tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const section = this.getAttribute('data-section');
+                    showSection(section);
+                });
+            });
+            
+            // Initialize videos on page load
+            initializeScrollyVideos();
         });
+        
+        // Mobile scroll dampening
+        let lastScrollTime = 0;
+        let scrollVelocity = 0;
+        let dampedScrollY = window.scrollY;
+        
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                   ('ontouchstart' in window) || 
+                   (navigator.maxTouchPoints > 0);
+        }
+        
+        function initializeMobileScrollDampening() {
+            if (!isMobileDevice()) return;
+            
+            let isScrolling = false;
+            const dampingFactor = 0.15; // Reduce scroll sensitivity by 85%
+            
+            function handleTouchMove(e) {
+                isScrolling = true;
+            }
+            
+            function handleTouchEnd(e) {
+                isScrolling = false;
+            }
+            
+            function handleScroll(e) {
+                if (!isScrolling) return;
+                
+                const now = Date.now();
+                const deltaTime = now - lastScrollTime;
+                
+                if (deltaTime > 0) {
+                    const currentScrollY = window.scrollY;
+                    const scrollDelta = currentScrollY - dampedScrollY;
+                    
+                    // Apply dampening only if scroll delta is large (flick gesture)
+                    if (Math.abs(scrollDelta) > 30) {
+                        scrollVelocity = scrollDelta * dampingFactor;
+                        dampedScrollY += scrollVelocity;
+                        
+                        // Smooth the scroll position
+                        window.scrollTo({
+                            top: dampedScrollY,
+                            behavior: 'auto'
+                        });
+                    } else {
+                        dampedScrollY = currentScrollY;
+                    }
+                }
+                
+                lastScrollTime = now;
+            }
+            
+            // Add touch event listeners
+            document.addEventListener('touchmove', handleTouchMove, { passive: true });
+            document.addEventListener('touchend', handleTouchEnd, { passive: true });
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }
 
-        // Initialize the second ScrollyVideo
-        new ScrollyVideo({
-            scrollyVideoContainer: "scrolly-video-2",
-            src: "video/day2_1.mp4",
-            transitionSpeed: 1, // Reduced from 2 for smoother transitions
-            frameThreshold: 0.1,
-            useWebCodecs: true, // Enable WebCodecs for better performance
-            trackScroll: true,
-            lockScroll: false,
-            debug: true,
-            objectFit: "contain"
-        });
+        function initializeScrollyVideos() {
+            // Clear existing instances
+            if (window.scrollyVideo1) window.scrollyVideo1.destroy?.();
+            if (window.scrollyVideo2) window.scrollyVideo2.destroy?.();
+            
+            // Mobile-specific configuration
+            const isMobile = isMobileDevice();
+            const mobileConfig = isMobile ? {
+                transitionSpeed: 0.3, // Even slower transitions on mobile
+                frameThreshold: 0.03, // Very sensitive frame changes
+            } : {
+                transitionSpeed: 1,
+                frameThreshold: 0.1,
+            };
+            
+            // Initialize the first ScrollyVideo
+            window.scrollyVideo1 = new ScrollyVideo({
+                scrollyVideoContainer: "scrolly-video",
+                src: "video/day1_1.mp4",
+                ...mobileConfig,
+                useWebCodecs: true,
+                trackScroll: true,
+                lockScroll: false,
+                debug: true,
+                objectFit: "contain"
+            });
+
+            // Initialize the second ScrollyVideo
+            window.scrollyVideo2 = new ScrollyVideo({
+                scrollyVideoContainer: "scrolly-video-2",
+                src: "video/day2_1.mp4",
+                ...mobileConfig,
+                useWebCodecs: true,
+                trackScroll: true,
+                lockScroll: false,
+                debug: true,
+                objectFit: "contain"
+            });
+            
+            // Initialize mobile scroll dampening
+            initializeMobileScrollDampening();
+        }
 
         // Enhanced scroll effect for layered images that mimics ScrollyVideo behavior
         function handleLayeredSectionScroll(sectionId, layeredSectionId) {
@@ -163,7 +517,6 @@
             const scrollTop = window.pageYOffset;
             
             // Calculate how far we've scrolled through the section
-            // We start counting once the section comes into view
             const scrollPosition = Math.max(0, scrollTop - sectionTop);
             const scrollProgress = Math.min(1, scrollPosition / (sectionHeight - window.innerHeight));
             
@@ -171,8 +524,8 @@
             const totalLayers = scrollLayers.length;
             
             scrollLayers.forEach((layer, index) => {
-                // Distribute thresholds evenly from 0 to 0.9 (saving the last 10% for after all layers are visible)
-                const layerThreshold = index / (totalLayers + 1);  
+                // Start at 20% and distribute layers from 20% to 70% (leaving 30% for sticky final image)
+                const layerThreshold = index === 0 ? 0.2 : 0.2 + (0.5 * (index) / (totalLayers - 1));
                 
                 if (scrollProgress >= layerThreshold) {
                     layer.classList.add('visible');
@@ -189,6 +542,174 @@
             // Handle second layered section (p2)
             handleLayeredSectionScroll('p2-section', 'layered-section-2');
         });
+
+        // Interactive Bike Setup Hotspot functionality
+        function initializeHotspots() {
+            const hotspots = document.querySelectorAll('.hotspot');
+            const curveSvg = document.getElementById('curve-svg');
+            
+            // Create curves for each hotspot
+            hotspots.forEach((hotspot, index) => {
+                const curve = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                curve.classList.add('curve-line');
+                curve.setAttribute('id', `curve-${index}`);
+                curveSvg.appendChild(curve);
+                
+                const showCurve = () => {
+                    const dot = hotspot.querySelector('.hotspot-dot');
+                    const label = hotspot.querySelector('.hotspot-label');
+                    
+                    if (!dot || !label) return;
+                    
+                    const dotRect = dot.getBoundingClientRect();
+                    const labelRect = label.getBoundingClientRect();
+                    
+                    // Get center of dot
+                    const dotX = dotRect.left + dotRect.width / 2;
+                    const dotY = dotRect.top + dotRect.height / 2;
+                    
+                    // Get center bottom of label
+                    const labelX = labelRect.left + labelRect.width / 2;
+                    const labelY = labelRect.bottom;
+                    
+                    // Create curved path
+                    const midY = (dotY + labelY) / 2;
+                    const controlOffset = Math.abs(dotX - labelX) * 0.3;
+                    
+                    const pathData = `M ${dotX} ${dotY} Q ${dotX < labelX ? dotX + controlOffset : dotX - controlOffset} ${midY} ${labelX} ${labelY}`;
+                    
+                    curve.setAttribute('d', pathData);
+                    curve.style.opacity = '1';
+                };
+                
+                const hideCurve = () => {
+                    curve.style.opacity = '0';
+                };
+                
+                // Mobile touch events
+                hotspot.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    // Hide all curves first
+                    document.querySelectorAll('.curve-line').forEach(c => c.style.opacity = '0');
+                    // Remove any existing active states
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    // Add active state to touched hotspot
+                    this.classList.add('active');
+                    setTimeout(showCurve, 10);
+                }, { passive: false });
+                
+                hotspot.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    // Remove active state when touch ends, but keep line visible
+                    setTimeout(() => {
+                        this.classList.remove('active');
+                        // Don't hide curve here - let it hide when tooltip disappears
+                    }, 150);
+                }, { passive: false });
+                
+                // Desktop mouse events
+                hotspot.addEventListener('mouseenter', function() {
+                    // Hide all curves first
+                    document.querySelectorAll('.curve-line').forEach(c => c.style.opacity = '0');
+                    // Remove any existing active states from other hotspots
+                    hotspots.forEach(h => {
+                        if (h !== this) h.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    setTimeout(showCurve, 10);
+                });
+                
+                hotspot.addEventListener('mouseleave', function() {
+                    this.classList.remove('active');
+                    hideCurve();
+                });
+                
+                // Handle clicks for accessibility
+                hotspot.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+            
+            // Close any active hotspots when clicking elsewhere
+            document.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.hotspot')) {
+                    hotspots.forEach(h => h.classList.remove('active'));
+                    // Hide all curves when touching elsewhere
+                    document.querySelectorAll('.curve-line').forEach(c => c.style.opacity = '0');
+                }
+            });
+        }
+        
+        // Initialize hotspots when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeHotspots();
+            initializeXrayReveal();
+        });
+        
+        // X-ray reveal effect for P7 with CSS mask and marker-based proximity labels
+        function initializeXrayReveal() {
+            const coverImage = document.querySelector('.xray-cover-image');
+            const container = document.querySelector('#p7-section .xray-container');
+            const markers = document.querySelectorAll('.p7-marker');
+            const labels = document.querySelectorAll('.p7-label');
+            
+            if (!coverImage || !container) return;
+            
+            function updateMaskPosition(x, y) {
+                const rect = container.getBoundingClientRect();
+                const xPercent = ((x - rect.left) / rect.width) * 100;
+                const yPercent = ((y - rect.top) / rect.height) * 100;
+                
+                coverImage.style.setProperty('--mask-x', `${Math.max(0, Math.min(100, xPercent))}%`);
+                coverImage.style.setProperty('--mask-y', `${Math.max(0, Math.min(100, yPercent))}%`);
+                
+                // Hide all labels first
+                labels.forEach(label => label.classList.remove('visible'));
+                
+                // Check proximity to markers and show corresponding labels
+                markers.forEach(marker => {
+                    const markerDot = marker.querySelector('.p7-marker-dot');
+                    if (!markerDot) return;
+                    
+                    const markerRect = markerDot.getBoundingClientRect();
+                    const markerCenterX = markerRect.left + markerRect.width / 2;
+                    const markerCenterY = markerRect.top + markerRect.height / 2;
+                    
+                    // Calculate distance from cursor to marker center
+                    const distance = Math.sqrt(
+                        Math.pow(x - markerCenterX, 2) + Math.pow(y - markerCenterY, 2)
+                    );
+                    
+                    // Show corresponding label if cursor is within 100px of marker
+                    if (distance < 50) {
+                        const itemName = marker.getAttribute('data-item');
+                        const correspondingLabel = document.querySelector(`.p7-label[data-item="${itemName}"]`);
+                        if (correspondingLabel) {
+                            correspondingLabel.classList.add('visible');
+                        }
+                    }
+                });
+            }
+            
+            // Mouse events for desktop
+            container.addEventListener('mousemove', function(e) {
+                updateMaskPosition(e.clientX, e.clientY);
+            });
+            
+            // Touch events for mobile
+            container.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                updateMaskPosition(touch.clientX, touch.clientY);
+            }, { passive: false });
+            
+            container.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                updateMaskPosition(touch.clientX, touch.clientY);
+            }, { passive: false });
+        }
     </script>
 
 </body>
